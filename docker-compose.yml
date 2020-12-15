@@ -1,0 +1,14 @@
+---
+
+version: '3'
+
+services:
+
+  node:
+    user: ${USER}
+    image: y09/node
+    build: ./node
+    volumes:
+      - ./mnt/app:/app
+    ports:
+      - 3000:3000
