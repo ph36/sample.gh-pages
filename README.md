@@ -42,6 +42,12 @@ yarn install
 # -> ディレクトリ構造の整理を手動実施 (src/sample/ -> src/ に直置き)
 ```
 
+必要パッケージの導入
+
+```sh
+yarn add nuxt-property-decorator
+```
+
 Docker 内で Nuxt.js を動かすための設定
 
 ```nuxt.config.js
