@@ -1,7 +1,8 @@
 
 # Sample Nuxt.js
 
-https://ph36.github.io/sample.gh-pages/
+- https://ph36.github.io/sample.gh-pages/
+- dep. https://github.com/ph36/sampple.typescript
 
 Setup
 --------
