@@ -60,7 +60,7 @@ export default {
 
 (Option) デプロイ先が GitHub Pages の場合は static を指定した方がよい
 
-Run
+Develop
 --------
 
 ### Access
@@ -78,6 +78,15 @@ sudo docker-compose exec --user ${UID} node yarn dev
 # productin
 sudo docker-compose exec --user ${UID} node yarn build
 sudo docker-compose exec --user ${UID} node yarn start
+```
+
+Add Package
+--------
+
+Bootstrap (Install: https://bootstrap-vue.org/docs#nuxtjs-module)
+
+```sh
+yarn add bootstrap-vue
 ```
 
 Deploy

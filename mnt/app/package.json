@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
+    "bootstrap-vue": "^2.21.1",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
     "nuxt-property-decorator": "^2.8.8"
