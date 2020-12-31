@@ -1,7 +1,9 @@
 
 <template>
   <div>
-    <nuxt />
+    <main class="mx-auto" >
+      <nuxt />
+    </main>
   </div>
 </template>
 
@@ -9,3 +11,9 @@
 export default {
 }
 </script>
+
+<style>
+main {
+  width: 200px;
+}
+</style>

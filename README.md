@@ -2,33 +2,31 @@
 # Sample Nuxt.js
 
 - https://ph36.github.io/sample.gh-pages/
-- dep. https://github.com/ph36/sampple.typescript
+- dep. https://github.com/ph36/docker.node/
 
 Setup
 --------
 
+### 毎回必須
+
 HTTPS でクローン
 
 ```sh
-git https://<user>@github.com/ph36/sample.gh-pages.git
+ghq get https://<user>@github.com/ph36/sample.gh-pages.git
 ```
 
-GitHub アカウントの設定
-
-```sh
-git config user.email "<email>"
-```
-
-Docker コンテナの起動
+Docker コンテナの起動 (事前に ph36/node を作成しておく)
 
 ```sh
 cat << 'EOF' >> .env
 USER=${USER}
 EOF
-sudo docker-compose build
-sudo docker-compose run node --version
+sudo docker-compose run yarn --version
 sudo docker-compose up -d
+sudo docker-compose run yarn
 ```
+
+### 初回設定
 
 新規 Nuxt.js プロジェクトの作成
 
