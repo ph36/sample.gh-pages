@@ -18,12 +18,15 @@ ghq get https://<user>@github.com/ph36/sample.gh-pages.git
 Docker コンテナの起動 (事前に ph36/node を作成しておく)
 
 ```sh
-cat << 'EOF' >> .env
-USER=${USER}
+cat << EOF > .env
+# 生成されるファイルのアクセス権を root にしないための対策
+UID=${UID}
+# ホスト側のポートを指定
+PORT=3000
 EOF
-sudo docker-compose run yarn --version
+sudo docker-compose run node --version
 sudo docker-compose up -d
-sudo docker-compose run yarn
+sudo docker-compose exec node yarn
 ```
 
 ### 初回設定
@@ -34,7 +37,7 @@ sudo docker-compose run yarn
   - err. `throw new SAOError(Failed to install ${packageName} in ${cwd})`
 
 ```sh
-sudo docker-compose exec --user ${UID} node /bin/sh
+sudo docker-compose exec node /bin/sh
 yarn create nuxt-app sample
 yarn install
 # -> ディレクトリ構造の整理を手動実施 (src/sample/ -> src/ に直置き)
@@ -64,18 +67,18 @@ Develop
 ### Access
 
 ```sh
-sudo docker-compose exec --user ${UID} node /bin/sh
+sudo docker-compose exec node /bin/sh
 ```
 
 ### Build
 
 ```sh
 # development
-sudo docker-compose exec --user ${UID} node yarn dev
+sudo docker-compose exec node yarn dev
 
 # productin
-sudo docker-compose exec --user ${UID} node yarn build
-sudo docker-compose exec --user ${UID} node yarn start
+sudo docker-compose exec node yarn build
+sudo docker-compose exec node yarn start
 ```
 
 Add Package
